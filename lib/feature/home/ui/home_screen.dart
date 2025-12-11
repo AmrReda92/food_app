@@ -6,7 +6,6 @@ import 'package:delivery_food_app/feature/home/widgets/information_row.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key,});
@@ -16,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 22.w),
+          padding:  EdgeInsets.symmetric(horizontal: 24.w),
           child: Column(
             children: [
               InformationRow(),
@@ -39,24 +38,42 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Popular Items",style: AppTextStyles.font15,),
-                  Text("View All",style: AppTextStyles.font13,),
+                  Text("View All",style: AppTextStyles.font13.copyWith(color: Color(0xff606060)),),
 
                 ],
               ),
               SizedBox(height: 12.h,),
-              Row(
-                children: [
-                  Expanded(child: Image.asset(AppImages.burgerSmall)),
-                  Expanded(child: Image.asset(AppImages.pizza))
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(child: Text("burger")),
-                  Expanded(child: Text("pizza")),
-
-                ],
-              ),
+              Expanded(
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(AppImages.burgerSmall),
+                        Row(
+                          children: [
+                            Text("     "),
+                            Text("BURGER",style:AppTextStyles.font15),
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 30.w,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(AppImages.pizza),
+                        Row(
+                          children: [
+                            Text("     "),
+                            Text("PIZZA",style: AppTextStyles.font15,),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),

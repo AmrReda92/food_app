@@ -19,5 +19,10 @@ class AppTextStyles {
       color: Color(0xffFFFFFF),
       fontWeight: FontWeight.w400
   );
+  static TextStyle font16 = TextStyle(
+      fontSize: 16.sp,
+      color: Color(0xff242424),
+      fontWeight: FontWeight.w500
+  );
 
 }
