@@ -1,5 +1,6 @@
 import 'package:delivery_food_app/core/models/app_images.dart';
 import 'package:delivery_food_app/core/models/app_text_styles.dart';
+import 'package:delivery_food_app/core/widgets/custom_food_item.dart';
 import 'package:delivery_food_app/core/widgets/custom_search.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +9,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key,});
-
-  static final icons = [
-    AppImages.pizzaIcon,
-    AppImages.drinkIcon,
-    AppImages.burgerIcon,
-    AppImages.riceIcon,
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -57,22 +51,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 37.h,),
               SizedBox(
                 height: 96.h,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                   itemCount: icons.length,
-                    itemBuilder: (context,index){
-                     return  Padding(
-                       padding: EdgeInsets.only(right: 14.w),
-                      child: Container(
-                         color: Colors.green,
-                         width: 86.w,
-                         height: 96.h,
-                         child: Center(child: SvgPicture.asset(icons[index])
-                         ),
-                       ),
-                     );
-                    }
-                ),
+                child: CustomFoodItem()
               ),
               SizedBox(height: 22.h,),
               Image.asset(AppImages.burgerBig,),
@@ -108,16 +87,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   type: BottomNavigationBar(it),
-      //     items: [
-      //       BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.homeIcon,width: 28.w,height: 28.h,colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),),label: "Home",),
-      //       BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.favouriteIcon,width: 28.w,height: 28.h,),label: "Favourite"),
-      //       BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.cartIcon,width: 28.w,height: 28.h,),label: "Cart",),
-      //       BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.profileIcon,width: 28.w,height: 28.h,),label: "Profile"),
-      //
-      //     ]
-      // ),
+
     );
   }
 }
