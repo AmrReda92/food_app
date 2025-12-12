@@ -1,4 +1,5 @@
 import 'package:delivery_food_app/feature/home/ui/home_screen.dart';
+import 'package:delivery_food_app/feature/order/presentation/ui/order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,6 +16,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   int currentIndex =0 ;
   List<Widget> screens = [
     HomeScreen(),
+    OrderScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,10 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
           selectedItemColor: Color(0xff4A43EC),
           unselectedItemColor: Color(0xff242424),
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home),label: "HOME"),
+            BottomNavigationBarItem(icon: Icon(Icons.home,
+              color:currentIndex == 0 ? Color(0xff4A43EC) :Color(0xff242424),
+            )
+                ,label: "HOME"),
             BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.shoppingIcon,
               colorFilter: ColorFilter.mode(currentIndex == 1 ? Color(0xff4A43EC) :Color(0xff242424),BlendMode.srcIn,)
             ),
