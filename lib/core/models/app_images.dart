@@ -9,4 +9,7 @@ class AppImages {
   static const String burgerBig = "assets/images/burger_big.png";
   static const String burgerSmall = "assets/images/burgerSmallOne.png";
   static const String pizza = "assets/images/pizza.png";
+  static const String shoppingIcon = "assets/icons/shopping_icon.svg";
+  static const String chatIcon = "assets/icons/chat_icon.svg";
+  static const String profileIcon = "assets/icons/profile_icon.svg";
 }
